@@ -1,0 +1,78 @@
+Assignment: 
+Module : 22
+Submitted by : Sheikh Mohammed Morshed
+Submission date : 01/08/2023
+------------------------------------------------------------------------------------------------
+
+App Feature: X-Shop Customer Management and Promotional Email System
+
+Description:
+------------
+The X-Shop application is designed to provide shop owners with a user-friendly platform to manage their customer list and send promotional emails to their customers. The app allows for easy CRUD (Create, Read, Update, Delete) operations on customer data and streamlines the process of sending targeted marketing emails.
+
+Key Features:
+-------------
+Customer Management:
+Shop owners can add new customers to the system by providing their name, email address, contact number, and other relevant information.
+
+The app allows the shop owner to view and search the list of existing customers, displaying their basic details for quick reference.
+
+Shop owners can update customer information, such as contact details or preferences, as needed.
+
+The ability to delete a customer record is also provided to remove outdated or irrelevant data
+
+Promotional Email Campaigns:
+
+X-Shop offers a simple and intuitive email campaign creation interface.
+
+Solution :
+----------
+Step 1: Database Migration
+Create a migration file for the 'Customers' table:  
+    php artisan make:migration create_customers_table
+
+Run the migration to create the 'Customers' table:
+    php artisan migrate
+
+Step 2: Model and Controller
+Create a 'Customer' model and a controller for CRUD operations:
+    php artisan make:model Customer -mc
+
+Step 3: Routes
+Define the routes for the CRUD operations in 'routes/web.php':
+
+Step 4: Views
+Create the views for listing, adding, editing, and deleting customers:
+1) List Customers - 'resources/views/customers/index.blade.php':
+2) Add Customer - 'resources/views/customers/create.blade.php':
+3) Edit Customer - 'resources/views/customers/edit.blade.php':
+4) Test the application
+
+
+Step 4: Database Migrations
+
+In addition to the 'Customers' table we created earlier, create a new migration for the 'EmailCampaigns' table:
+    php artisan make:migration create_email_campaigns_table
+
+Run the migration to create the 'EmailCampaigns' table:
+    php artisan migrate
+
+Step 5: Model and Controller for Email Campaigns
+Create a new model and controller for managing the email campaigns:
+    php artisan make:model EmailCampaign -mc
+
+1) Edit the 'EmailCampaign' model located at 'app/Models/EmailCampaign.php':
+2) Edit the 'EmailCampaignController' located at 'app/Http/Controllers/EmailCampaignController.php':
+
+Step 6: Routes
+Define the routes for the email campaigns in 'routes/web.php':
+
+Step 7: Views
+Create the views for managing email campaigns:
+1) List Email Campaigns - 'resources/views/email_campaigns/index.blade.php':
+2) Create Email Campaign - 'resources/views/email_campaigns/create.blade.php':
+
+Step 8: Implement Search Functionality
+To implement the search functionality for customers, you can modify the 'index' method in the 'CustomerController' as follows:
+1) Update the 'customers/index.blade.php' view to include a search form:
+
